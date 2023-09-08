@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${K8S_DEPLOYMENT_NAME}
+  name: k8s
   labels:
-    app: ${K8S_DEPLOYMENT_NAME}
+    app: k8s
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ${K8S_DEPLOYMENT_NAME}
+      app: k8s
   template:
     metadata:
       labels:
-        app: ${K8S_DEPLOYMENT_NAME}
+        app: k8s
     spec:
       containers:
-        - name: ${K8S_DEPLOYMENT_NAME}
-          image: ${DOCKER_IMAGE}  # This will be replaced dynamically
+        - name: k8s
+          image: ${DOCKER_IMAGE}  
           ports:
             - containerPort: 8080
