@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: k8s
-          image: ${DOCKER_IMAGE}  
+          image: ${DOCKER_IMAGE} 
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
